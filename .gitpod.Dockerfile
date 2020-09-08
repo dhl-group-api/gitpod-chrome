@@ -2,7 +2,7 @@ FROM gitpod/workspace-full-vnc
 
 USER gitpod
 
-RUN sudo apt-get -q update && \
+RUN sudo apt remove chromium-browser chromium-browser-l10n chromium-codecs-ffmpeg-extra && \
     sudo touch /etc/apt/sources.list.d/debian.list && \
     echo "deb http://ftp.debian.org/debian buster main" | sudo tee -a /etc/apt/sources.list.d/debian.list && \
     echo "deb http://ftp.debian.org/debian buster-updates main" | sudo tee -a /etc/apt/sources.list.d/debian.list && \
