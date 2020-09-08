@@ -26,4 +26,4 @@ RUN sudo apt-get -q update && \
     echo "Pin: origin 'ftp.debian.org'" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     echo "Pin-Priority: 700" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     sudo apt-get -q update && \
-    sudo apt-get -qy install chromium
+    sudo apt-get install -yq chromium-browser && \
