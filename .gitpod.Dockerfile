@@ -4,3 +4,4 @@ USER gitpod
 
 RUN sudo apt-get -q update && \
     sudo apt-get install -yq snapd
+    service --status-all
