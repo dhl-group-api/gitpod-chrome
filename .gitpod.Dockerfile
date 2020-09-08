@@ -25,9 +25,8 @@ RUN sudo touch /etc/apt/sources.list.d/debian.list && \
     echo "Pin: origin 'ftp.debian.org'" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     echo "Pin-Priority: 700" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     sudo apt-get update --allow-releaseinfo-change && \
-    sudo apt-get install -yq chromium
-    sudo apt-get install -y \
-    libasound2-dev \
-    libgtk-3-dev \
-    libnss3-dev \ &&
+    sudo apt-get install -yq chromium && \
+    sudo apt-get install -y libasound2-dev && \
+    sudo apt-get install -y libgtk-3-dev && \
+    sudo apt-get install -y libnss3-dev && \
     sudo rm -rf /var/lib/apt/lists/*
