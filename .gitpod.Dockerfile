@@ -10,4 +10,18 @@ RUN sudo apt-get -q update && \
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DCC9EFBF77E11517 && \
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138 && \
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AA8E81B4331F7F50 && \
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 112695A0E562B32A
+    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 112695A0E562B32A && \
+    sudo touch /etc/apt/preferences.d/chromium.pref && \
+    echo "Package: *" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Pin: release a=eoan" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Pin-Priority: 500" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Package: *" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Pin: origin "ftp.debian.org"" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Pin-Priority: 300" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "# Pattern includes 'chromium', 'chromium-browser' and similarly" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "# named dependencies:" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Package: chromium*" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Pin: origin 'ftp.debian.org'" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
+    echo "Pin-Priority: 700" | sudo tee -a /etc/apt/preferences.d/chromium.pref
