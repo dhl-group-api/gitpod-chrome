@@ -25,5 +25,4 @@ RUN sudo touch /etc/apt/sources.list.d/debian.list && \
     echo "Pin: origin 'ftp.debian.org'" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     echo "Pin-Priority: 700" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     sudo apt-get update --allow-releaseinfo-change && \
-    sudo apt-get install -yq chromium && \
-    sudo chromium
+    sudo apt-get install -yq chromium
