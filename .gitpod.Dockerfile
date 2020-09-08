@@ -3,9 +3,7 @@ FROM gitpod/workspace-full-vnc
 USER gitpod
 
 RUN sudo apt-get -q update && \
-    sudo echo -e "deb http://ftp.debian.org/debian buster main\
-    deb http://ftp.debian.org/debian buster-updates main\
-    deb http://ftp.debian.org/debian-security buster/updates main" >> /etc/apt/sources.list.d/debian.list
+    sudo echo -e "line 1\line 2" >> /etc/apt/sources.list.d/debian.list
     
     
     
