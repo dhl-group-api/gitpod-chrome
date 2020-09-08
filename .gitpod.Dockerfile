@@ -24,5 +24,4 @@ RUN sudo apt-get -q update && \
     echo "# named dependencies:" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     echo "Package: chromium*" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
     echo "Pin: origin 'ftp.debian.org'" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
-    echo "Pin-Priority: 700" | sudo tee -a /etc/apt/preferences.d/chromium.pref && \
-    sudo apt -q update
+    echo "Pin-Priority: 700" | sudo tee -a /etc/apt/preferences.d/chromium.pref
